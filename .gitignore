@@ -2,3 +2,4 @@ bak-app.py
 sql_db.sql
 student_portal_program_list_database.sqlite3
 student-portal.py
+modules/__pycache__/
