@@ -2,39 +2,39 @@
 
 <head>
     <title>Academic Progress</title>
-    <style>
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
     <h1>Graduation Tracker</h1>
     <form method="post">
-        <label for="student_id">Student ID:</label><br>
-        <input type="text" id="student_id" name="student_id"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <label for="program">Program:</label><br>
-        <select id="program" name="program">
+        <label for="studentID">Student ID:</label>
+        <input type="text" id="studentID" name="student_id" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="program">Program:</label>
+        <select id="program" name="program" required>
+            <option disabled selected>-- Select Program --</option>
             {% for id, program in programs.items() %}
             <option value="{{ id }}">{{ program.name }}</option>
             {% endfor %}
-        </select><br><br>
-        <input type="submit" value="Submit">
+        </select>
+
+        <label>
+            <input type="checkbox" name="privacyPolicy" value="accepted" required> I accept the <a
+                href="/privacy-policy">privacy policy</a>.
+        </label>
+
+        <button type="submit">Login</button>
     </form>
 
     {% if error %}
     <div class="error">{{ error }}</div>
     {% endif %}
 
-    <script>
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
-    </script>
+    <script src="{{ url_for('static', filename='js/prevent-form-reload.js') }}"></script>
 </body>
 
 </html>

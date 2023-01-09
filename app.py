@@ -33,6 +33,8 @@ def index():
         # Create a ChromeOptions object to set the headless flag
         chrome_options = webdriver.chrome.options.Options()
         chrome_options.add_argument("--headless")
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
 
         # Create a ChromeDriver instance with the headless flag set
         driver = webdriver.Chrome(options=chrome_options)
@@ -98,8 +100,13 @@ def index():
         credits_left = program["total_credit"] - total_credit
 
         # Render the template with the calculated values
-        return render_template("programs.html", semesters_left=semesters_left, credits_left=credits_left)
+        return render_template("programs.html", total_credit=total_credit, semesters_left=semesters_left, credits_left=credits_left)
+
+
+@app.route("/privacy-policy", methods=["GET"])
+def privacy_policy():
+    return render_template("privacy.html")
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=8080)

@@ -1,21 +1,32 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Output</title>
+    <title>Academic Progress Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-    <h1>Output</h1>
+    <h1>Academic Progress Report</h1>
+
     {% if semesters_left is defined %}
-    <h2>Semesters Left: {{ semesters_left }}</h2>
-    <h2>Credits Left: {{ credits_left }}</h2>
+    <table>
+        <tr>
+            <th>Total Completed Credits:</th>
+            <td>{{ total_credit }}</td>
+        </tr>
+        <tr>
+            <th>Total Semesters Left:</th>
+            <td>{{ semesters_left }}</td>
+        </tr>
+        <tr>
+            <th>Total Credits Left:</th>
+            <td>{{ credits_left }}</td>
+        </tr>
+    </table>
     {% endif %}
 
-    <script>
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
-    </script>
+    <script src="{{ url_for('static', filename='js/prevent-form-reload.js') }}"></script>
 </body>
 
 </html>
