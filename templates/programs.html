@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Output</title>
+</head>
+
+<body>
+    <h1>Output</h1>
+    {% if semesters_left is defined %}
+    <h2>Semesters Left: {{ semesters_left }}</h2>
+    <h2>Credits Left: {{ credits_left }}</h2>
+    {% endif %}
+
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+
+</html>
