@@ -40,4 +40,4 @@ Fill up the form with your Student ID and Password and click, Login button ( not
 
 It will display the academic progress
 
-![](https://i.imgur.com/SXMDf5H.jpg)
+![](https://i.imgur.com/ulrPNGr.png)
