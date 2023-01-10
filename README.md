@@ -18,7 +18,7 @@ $ pip install -r requirements.txt
 $ python3 app.py
 ```
 
-Make sure you have [Chrome Driver](https://chromedriver.chromium.org/downloads) is installed in your system wheather it's Mac/Linux/Win and set the Environment variable so the `chromedriver` binary easily accessible from the system.
+Make sure you have [Chrome Driver](https://chromedriver.chromium.org/downloads) installed in your system wheather it's Mac/Linux/Win and set the Environment variable so the `chromedriver` binary easily accessible from the system.
 
 #### If you have Docker
 
