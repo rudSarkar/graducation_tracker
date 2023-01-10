@@ -69,6 +69,7 @@ def fetch_data(student_id, password, program_id, render_template):
 
     # Initialize a variable to store the total credit completed
     total_credit = 0
+    total_semeseter_completed = 0
 
     # Iterate over the rows
     for row in rows:
@@ -77,6 +78,7 @@ def fetch_data(student_id, password, program_id, render_template):
 
         # Get the text of the 6th cell (index 5) and add it to the total credit
         total_credit += float(cells[5].text)
+        total_semeseter_completed += 1
 
     # Get the program information from the programs dictionary
     program = programs_data()[program_id]
@@ -89,5 +91,7 @@ def fetch_data(student_id, password, program_id, render_template):
     # Calculate the number of credits left to complete
     credits_left = program["total_credit"] - total_credit
 
+    running_sememster = total_semeseter_completed + 1
+
     # Render the template with the calculated values
-    return render_template("programs.html", total_credit=total_credit, semesters_left=semesters_left, credits_left=credits_left)
+    return render_template("programs.html", total_semeseter_completed=total_semeseter_completed, running_sememster=running_sememster, total_credit=total_credit, semesters_left=semesters_left, credits_left=credits_left)

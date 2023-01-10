@@ -12,6 +12,14 @@
     {% if semesters_left is defined %}
     <table>
         <tr>
+            <th>Current Semester:</th>
+            <td>{{ running_sememster }}</td>
+        </tr>
+        <tr>
+            <th>Total Completed Semesters:</th>
+            <td>{{ total_semeseter_completed }}</td>
+        </tr>
+        <tr>
             <th>Total Completed Credits:</th>
             <td>{{ total_credit }}</td>
         </tr>
