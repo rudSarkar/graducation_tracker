@@ -28,3 +28,16 @@ $ sudo ./build.sh
 ```
 
 It will expose to [http://localhost:8000/](http://localhost:8000/)
+
+
+#### Screenshots
+
+![](https://i.imgur.com/G7wgeJV.png)
+
+Fill up the form with your Student ID and Password and click, Login button ( note: this application doesn't save any credentials or logs any info )
+
+![](https://i.imgur.com/wHFALIq.jpg)
+
+It will display the academic progress
+
+![](https://i.imgur.com/SXMDf5H.jpg)
